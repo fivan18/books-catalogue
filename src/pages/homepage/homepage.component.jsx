@@ -2,11 +2,11 @@ import React from 'react';
 
 import './homepage.styles.scss';
 
-import PersonList from '../../components/person-list/person-list.component';
+import Search from '../../components/search/search.component';
 
 const HomePage = () => (
   <div className="home-page">
-    <PersonList />
+    <Search />
   </div>
 );
 
