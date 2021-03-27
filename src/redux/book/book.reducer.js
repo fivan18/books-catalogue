@@ -1,7 +1,7 @@
 import BookActionTypes from './book.types';
 
 const INITIAL_STATE = {
-  books: {},
+  bookItems: [],
 };
 
 const bookReducer = (state = INITIAL_STATE, action) => {
@@ -9,7 +9,7 @@ const bookReducer = (state = INITIAL_STATE, action) => {
     case BookActionTypes.ADD_BOOKS:
       return {
         ...state,
-        books: action.payload,
+        bookItems: action.payload,
       };
     default:
       return state;

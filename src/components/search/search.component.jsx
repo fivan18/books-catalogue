@@ -13,8 +13,8 @@ const Search = ({ addBooks }) => {
 
     axios.get(`https://openlibrary.org/search.json?mode=everything&q=title:${keyWord}&page=1`)
       .then((res) => {
-        const books = res.data;
-        addBooks(books);
+        const booksItems = res.data.docs;
+        addBooks(booksItems);
       });
 
     setInput('');
