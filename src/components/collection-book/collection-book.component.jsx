@@ -23,6 +23,7 @@ CollectionBook.propTypes = {
         PropTypes.string,
       ),
       first_publish_year: PropTypes.number,
+      cover_i: PropTypes.number,
     }),
   ).isRequired,
 };

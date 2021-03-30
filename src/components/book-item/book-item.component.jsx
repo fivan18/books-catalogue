@@ -2,8 +2,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BookItem = ({ bookItem: { title, author_name, first_publish_year } }) => (
+import avatarBook from '../../assets/avatar_book-sm.png';
+
+const BookItem = ({
+  bookItem: {
+    title, author_name, first_publish_year, cover_i,
+  },
+}) => (
   <div className="book-item">
+    <img
+      src={cover_i
+        ? `http://covers.openlibrary.org/b/id/${cover_i}-M.jpg`
+        : avatarBook}
+      alt="cover book"
+    />
     <h2 className="book-item__title">
       {title || 'Title'}
     </h2>
@@ -23,6 +35,7 @@ BookItem.propTypes = {
       PropTypes.string,
     ),
     first_publish_year: PropTypes.number,
+    cover_i: PropTypes.number,
   }).isRequired,
 };
 
