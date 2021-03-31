@@ -14,7 +14,7 @@ const BookItem = ({
     className="book-item"
     onClick={() => history.push(`${match.url}details${key.substring(6)}`)}
     onKeyPress={() => {}}
-    role="menuitem"
+    role="link"
     tabIndex={0}
   >
     <img
