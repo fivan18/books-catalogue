@@ -1,15 +1,22 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import avatarBook from '../../assets/avatar_book-sm.png';
 
 const BookItem = ({
   bookItem: {
-    title, author_name, first_publish_year, cover_i,
-  },
+    title, author_name, first_publish_year, cover_i, key,
+  }, history, match,
 }) => (
-  <div className="book-item">
+  <div
+    className="book-item"
+    onClick={() => history.push(`${match.url}details${key.substring(6)}`)}
+    onKeyPress={() => {}}
+    role="menuitem"
+    tabIndex={0}
+  >
     <img
       src={cover_i
         ? `http://covers.openlibrary.org/b/id/${cover_i}-M.jpg`
@@ -36,7 +43,14 @@ BookItem.propTypes = {
     ),
     first_publish_year: PropTypes.number,
     cover_i: PropTypes.number,
+    key: PropTypes.string.isRequired,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+  match: PropTypes.shape({
+    url: PropTypes.string,
   }).isRequired,
 };
 
-export default BookItem;
+export default withRouter(BookItem);
