@@ -2,9 +2,22 @@ import { createSelector } from 'reselect';
 
 const selectBook = (state) => state.book;
 
-export const ivancitoSelector = 'ivancito';
-
 export const selectBookItems = createSelector(
   [selectBook],
   (book) => book.bookItems,
+);
+
+export const selectBookItem = createSelector(
+  [selectBook],
+  (book) => book.bookItem,
+);
+
+export const selectCoverI = createSelector(
+  [selectBookItem],
+  (bookItem) => bookItem.cover_i,
+);
+
+export const selectLendingEditionS = createSelector(
+  [selectBookItem],
+  (bookItem) => bookItem.lending_edition_s,
 );
