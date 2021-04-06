@@ -31,13 +31,13 @@ const BookItem = ({
         avatarBook={avatarBook}
       />
       <h2 className="book-item__title">
-        {title || 'Title'}
+        {title || 'No title'}
       </h2>
       <p className="book-item__author">
-        {author_name ? author_name[0] : 'Author'}
+        {`by ${author_name ? author_name[0] : 'No author'}`}
       </p>
       <span className="book-item__first-published">
-        {first_publish_year || '0'}
+        {`First published in ${first_publish_year || 'No year'}`}
       </span>
     </div>
   );
