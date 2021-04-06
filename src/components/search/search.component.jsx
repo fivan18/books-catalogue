@@ -11,7 +11,7 @@ const Search = ({ addBooks }) => {
   const handleSubmit = (event, keyWord) => {
     event.preventDefault();
 
-    axios.get(`http://openlibrary.org/search.json?title=${keyWord}`)
+    axios.get(`http://openlibrary.org/search.json?title=${keyWord}&mode=ebooks&has_fulltext=true`)
       .then((res) => {
         const booksItems = res.data.docs;
         addBooks(booksItems);
