@@ -1,11 +1,8 @@
 /* eslint-disable camelcase, no-console */
 import React from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
 
 import BookItem from '../book-item/book-item.component';
-import { selectBookItems } from '../../redux/book/book.selectors';
 
 const CollectionBook = ({ bookItems }) => (
   <div>
@@ -30,11 +27,4 @@ CollectionBook.propTypes = {
   ).isRequired,
 };
 
-const mapStateToProps = createStructuredSelector({
-  bookItems: selectBookItems,
-});
-
-export default connect(
-  mapStateToProps,
-  null,
-)(CollectionBook);
+export default CollectionBook;

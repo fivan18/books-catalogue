@@ -12,6 +12,11 @@ export const selectBookItem = createSelector(
   (book) => book.bookItem,
 );
 
+export const selectYear = createSelector(
+  [selectBook],
+  (book) => book.year,
+);
+
 export const selectCoverI = createSelector(
   [selectBookItem],
   (bookItem) => bookItem.cover_i,

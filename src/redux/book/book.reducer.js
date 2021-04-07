@@ -4,6 +4,7 @@ import { choseBookByKey } from './book.utils';
 const INITIAL_STATE = {
   bookItems: [],
   bookItem: {},
+  year: 'All',
 };
 
 const bookReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +18,11 @@ const bookReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         bookItem: choseBookByKey(state.bookItems, action.payload),
+      };
+    case BookActionTypes.CHOSE_YEAR:
+      return {
+        ...state,
+        year: action.payload,
       };
     default:
       return state;
