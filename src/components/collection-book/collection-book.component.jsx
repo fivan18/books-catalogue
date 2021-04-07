@@ -10,7 +10,7 @@ import { selectBookItems } from '../../redux/book/book.selectors';
 const CollectionBook = ({ bookItems }) => (
   <div>
     {bookItems.map((bookItem) => (
-      <BookItem key={1} bookItem={bookItem} />
+      <BookItem key={bookItem.key} bookItem={bookItem} />
     ))}
   </div>
 );
@@ -25,6 +25,7 @@ CollectionBook.propTypes = {
       first_publish_year: PropTypes.number,
       lending_edition_s: PropTypes.string,
       cover_i: PropTypes.number,
+      key: PropTypes.string,
     }),
   ).isRequired,
 };
