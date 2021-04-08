@@ -10,9 +10,12 @@ const FilterByYear = ({ bookItems, choseYear }) => (
   <div>
     {bookItems.length !== 0
       ? (
-        <form>
-          <select onChange={(event) => choseYear(event.target.value)}>
-            <option value="All" selected>All</option>
+        <form className="filter-by-year">
+          <select
+            className="filter-by-year__select"
+            onChange={(event) => choseYear(event.target.value)}
+          >
+            <option value="All" selected>Published year</option>
             {[...new Set(bookItems.map((bookItem) => bookItem.first_publish_year))]
               .sort((a, b) => b - a)
               .map((year) => {

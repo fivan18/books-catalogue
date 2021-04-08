@@ -1,0 +1,14 @@
+.filter-by-year {
+  margin-right: 2rem;
+
+  &__select {
+    font-family: inherit;
+    font-size: inherit;
+    color: rgb(94, 92, 92);
+    background-color: #f4f2f2;
+    border: 1px solid #f0eeee;
+    border-radius: 0.2rem;
+    padding: 0.1em 2.5em 0.1em 0.5em;
+    outline: none;
+  }
+}
