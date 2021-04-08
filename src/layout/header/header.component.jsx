@@ -6,7 +6,7 @@ import logo from '../../assets/book.png';
 
 const Header = () => (
   <header className="header">
-    <img src={logo} alt="The logo." />
+    <img src={logo} alt="The logo." className="header__logo" />
     <Search />
     <FilterByYear />
   </header>
