@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './homepage.styles.scss';
-
 import Search from '../../components/search/search.component';
 import FilterByYear from '../../components/filter-by-year/filter-by-year.component';
 import Filter from '../../components/filter/filter.component';

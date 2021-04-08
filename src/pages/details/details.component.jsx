@@ -4,7 +4,6 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import './details.styles.scss';
 import avatarBook from '../../assets/avatar_book-sm.png';
 import { selectCoverI, selectLendingEditionS } from '../../redux/book/book.selectors';
 import CoverImage from '../../components/cover-image/cover-image.component';
