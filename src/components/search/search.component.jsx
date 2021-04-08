@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import { addBooks, choseYear } from '../../redux/book/book.actions';
+import searchIcon from '../../assets/search.png';
 
 const Search = ({ addBooks, choseYear }) => {
   const [input, setInput] = useState('');
@@ -22,12 +23,26 @@ const Search = ({ addBooks, choseYear }) => {
   };
 
   return (
-    <div>
-      <form>
-        <input type="text" onChange={(event) => setInput(event.target.value)} value={input} />
-        <button type="submit" onClick={(event) => handleSubmit(event, input)}>Submit</button>
-      </form>
-    </div>
+    <form className="search">
+      <input
+        className="search__input"
+        placeholder="Search by title..."
+        type="text"
+        onChange={(event) => setInput(event.target.value)}
+        value={input}
+      />
+      <button
+        className="search__button"
+        type="submit"
+        onClick={(event) => handleSubmit(event, input)}
+      >
+        <img
+          className="search__icon"
+          src={searchIcon}
+          alt="Search icon."
+        />
+      </button>
+    </form>
   );
 };
 
