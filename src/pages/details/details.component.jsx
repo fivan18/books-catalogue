@@ -7,6 +7,7 @@ import { createStructuredSelector } from 'reselect';
 import avatarBook from '../../assets/avatar_book-sm.png';
 import { selectCoverI, selectLendingEditionS } from '../../redux/book/book.selectors';
 import CoverImage from '../../components/cover-image/cover-image.component';
+import { loremText } from './details.data';
 
 const Details = ({ match: { params: { workId } }, coverI, lendingEditionS }) => {
   const [details, setDetails] = useState({
@@ -20,7 +21,7 @@ const Details = ({ match: { params: { workId } }, coverI, lendingEditionS }) => 
         const { title, description } = res.data;
         const data = {
           title: title || 'No title',
-          description: description || 'No description',
+          description: description || loremText,
         };
 
         setDetails(data);
@@ -31,13 +32,18 @@ const Details = ({ match: { params: { workId } }, coverI, lendingEditionS }) => 
 
   return (
     <div className="details">
-      <h2>{title}</h2>
       <CoverImage
         lendingEditionS={lendingEditionS}
         coverI={coverI}
         avatarBook={avatarBook}
+        className="details__image"
       />
-      <p>{typeof description === 'object' ? description.value : description}</p>
+      <div className="details__content">
+        <h2 className="details__title">{title}</h2>
+        <p className="details__description">
+          {typeof description === 'object' ? description.value : description}
+        </p>
+      </div>
     </div>
   );
 };
