@@ -1,7 +1,49 @@
 .book-item {
-  display: flex;
+  flex: 0 1 25%;
+  padding: 2rem 6rem;
+  outline: none;
+
+  &__area {
+    background-color: #fff;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 2rem;
+    height: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-1rem) scale(1.03);
+    }
+  }
 
   &__image {
-    height: 20rem;
+    width: 10rem;
+  }
+
+  &__content {
+    align-self: flex-start;
+    margin-top: 2rem;
+  }
+
+  &__title {
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  &__author {
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  &__first-published {
+    font-family: inherit;
+    font-size: 1.1rem;
+    color: rgb(126, 124, 124);
   }
 }

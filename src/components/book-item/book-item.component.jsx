@@ -25,23 +25,24 @@ const BookItem = ({
       role="link"
       tabIndex={0}
     >
-
-      <CoverImage
-        lendingEditionS={lending_edition_s}
-        coverI={cover_i}
-        avatarBook={avatarBook}
-        className="book-item__image"
-      />
-      <div className="book-item__content">
-        <h2 className="book-item__title">
-          {title || 'No title'}
-        </h2>
-        <p className="book-item__author">
-          {`by ${author_name ? author_name[0] : 'No author'}`}
-        </p>
-        <span className="book-item__first-published">
-          {`First published in ${first_publish_year || 'No year'}`}
-        </span>
+      <div className="book-item__area">
+        <CoverImage
+          lendingEditionS={lending_edition_s}
+          coverI={cover_i}
+          avatarBook={avatarBook}
+          className="book-item__image"
+        />
+        <div className="book-item__content">
+          <h2 className="book-item__title">
+            {title || 'No title'}
+          </h2>
+          <p className="book-item__author">
+            {`by ${author_name ? author_name[0] : 'No author'}`}
+          </p>
+          <span className="book-item__first-published">
+            {`First published in ${first_publish_year || 'No year'}`}
+          </span>
+        </div>
       </div>
     </div>
   );

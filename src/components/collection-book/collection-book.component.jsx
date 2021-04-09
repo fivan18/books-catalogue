@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import BookItem from '../book-item/book-item.component';
 
 const CollectionBook = ({ bookItems }) => (
-  <div>
+  <div className="collection-book">
     {bookItems.map((bookItem) => (
       <BookItem key={bookItem.key} bookItem={bookItem} />
     ))}
