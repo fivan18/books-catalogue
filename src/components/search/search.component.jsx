@@ -54,8 +54,12 @@ const Search = ({
 Search.propTypes = {
   addBooks: PropTypes.func.isRequired,
   choseYear: PropTypes.func.isRequired,
-  match: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({

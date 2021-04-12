@@ -17,7 +17,7 @@ const FilterByYear = ({ bookItems, choseYear, chosedYear }) => (
             className="filter-by-year__select"
             onChange={(event) => choseYear(event.target.value)}
           >
-            <option value="All" selected>Published year</option>
+            <option value="All">Published year</option>
             {[...new Set(bookItems.map((bookItem) => bookItem.first_publish_year))]
               .sort((a, b) => b - a)
               .map((year) => {
