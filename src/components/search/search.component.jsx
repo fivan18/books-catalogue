@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 import { addBooks, choseYear } from '../../redux/book/book.actions';
 import searchIcon from '../../assets/search.png';
 
-const Search = ({ addBooks, choseYear }) => {
+const Search = ({
+  addBooks, choseYear, match, history,
+}) => {
   const [input, setInput] = useState('');
 
   const handleSubmit = (event, keyWord) => {
@@ -20,6 +23,8 @@ const Search = ({ addBooks, choseYear }) => {
       });
 
     setInput('');
+
+    history.push(`${match.url}`);
   };
 
   return (
@@ -49,6 +54,8 @@ const Search = ({ addBooks, choseYear }) => {
 Search.propTypes = {
   addBooks: PropTypes.func.isRequired,
   choseYear: PropTypes.func.isRequired,
+  match: PropTypes.func.isRequired,
+  history: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -59,4 +66,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   null,
   mapDispatchToProps,
-)(Search);
+)(withRouter(Search));

@@ -2,16 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
-import { selectBookItems } from '../../redux/book/book.selectors';
+import { selectBookItems, selectYear } from '../../redux/book/book.selectors';
 import { choseYear } from '../../redux/book/book.actions';
 
-const FilterByYear = ({ bookItems, choseYear }) => (
+const FilterByYear = ({ bookItems, choseYear, chosedYear }) => (
   <div>
-    {bookItems.length !== 0
+    {bookItems.length !== 0 && useLocation().pathname === '/'
       ? (
         <form className="filter-by-year">
           <select
+            value={chosedYear}
             className="filter-by-year__select"
             onChange={(event) => choseYear(event.target.value)}
           >
@@ -45,10 +47,12 @@ FilterByYear.propTypes = {
     }),
   ).isRequired,
   choseYear: PropTypes.func.isRequired,
+  chosedYear: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
   bookItems: selectBookItems,
+  chosedYear: selectYear,
 });
 
 const mapDispatchToProps = (dispatch) => ({
