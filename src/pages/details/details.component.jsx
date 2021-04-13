@@ -16,7 +16,7 @@ const Details = ({ match: { params: { workId } }, coverI, lendingEditionS }) => 
   });
 
   useEffect(() => {
-    axios.get(`http://openlibrary.org/works/${workId}.json`)
+    axios.get(`https://openlibrary.org/works/${workId}.json`)
       .then((res) => {
         const { title, description } = res.data;
         const data = {
