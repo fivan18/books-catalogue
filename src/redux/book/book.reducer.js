@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   bookItems: [],
   bookItem: {},
   year: 'All',
+  inProgress: false,
 };
 
 const bookReducer = (state = INITIAL_STATE, action) => {
@@ -23,6 +24,11 @@ const bookReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         year: action.payload,
+      };
+    case BookActionTypes.SET_IN_PROGRESS:
+      return {
+        ...state,
+        inProgress: action.payload,
       };
     default:
       return state;

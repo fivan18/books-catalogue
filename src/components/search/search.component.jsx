@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 
-import { addBooks, choseYear } from '../../redux/book/book.actions';
+import { addBooks, choseYear, setInProgress } from '../../redux/book/book.actions';
 import searchIcon from '../../assets/search.png';
 
 const Search = ({
-  addBooks, choseYear, match, history,
+  addBooks, choseYear, setInProgress, match, history,
 }) => {
   const [input, setInput] = useState('');
 
@@ -20,9 +20,12 @@ const Search = ({
         const booksItems = res.data.docs;
         addBooks(booksItems);
         choseYear('All');
+        setInProgress(false);
       });
 
     setInput('');
+
+    setInProgress(true);
 
     history.push(`${match.url}`);
   };
@@ -54,6 +57,7 @@ const Search = ({
 Search.propTypes = {
   addBooks: PropTypes.func.isRequired,
   choseYear: PropTypes.func.isRequired,
+  setInProgress: PropTypes.func.isRequired,
   match: PropTypes.shape({
     url: PropTypes.string,
   }).isRequired,
@@ -65,6 +69,7 @@ Search.propTypes = {
 const mapDispatchToProps = (dispatch) => ({
   addBooks: (books) => dispatch(addBooks(books)),
   choseYear: (year) => dispatch(choseYear(year)),
+  setInProgress: (status) => dispatch(setInProgress(status)),
 });
 
 export default connect(
