@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Filter from '../../components/filter/filter.component';
+import Filter from '../../containers/filter/filter.component';
 
 const HomePage = () => (
   <div className="home-page">

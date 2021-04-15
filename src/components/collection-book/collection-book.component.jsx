@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BookItem from '../book-item/book-item.component';
+import BookItem from '../../containers/book-item/book-item.component';
 
 const CollectionBook = ({ bookItems }) => (
   <div className="collection-book">

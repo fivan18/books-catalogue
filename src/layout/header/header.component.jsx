@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Search from '../../components/search/search.component';
-import FilterByYear from '../../components/filter-by-year/filter-by-year.component';
+import Search from '../../containers/search/search.component';
+import FilterByYear from '../../containers/filter-by-year/filter-by-year.component';
 import logo from '../../assets/book.png';
 
 const Header = () => (

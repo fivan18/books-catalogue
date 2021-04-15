@@ -58,14 +58,19 @@ const Details = ({ match: { params: { workId } }, coverI, lendingEditionS }) => 
   );
 };
 
+Details.defaultProps = {
+  coverI: undefined,
+  lendingEditionS: undefined,
+};
+
 Details.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       workId: PropTypes.string,
     }),
   }).isRequired,
-  coverI: PropTypes.number.isRequired,
-  lendingEditionS: PropTypes.string.isRequired,
+  coverI: PropTypes.number,
+  lendingEditionS: PropTypes.string,
 };
 
 const mapStateToProps = createStructuredSelector({

@@ -4,7 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
 
 import { selectYear, selectBookItems } from '../../redux/book/book.selectors';
-import CollectionBook from '../collection-book/collection-book.component';
+import CollectionBook from '../../components/collection-book/collection-book.component';
 
 const Filter = ({ year, bookItems }) => {
   let bookItemsFiltered;

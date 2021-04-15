@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import avatarBook from '../../assets/avatar_book-sm.png';
 import { choseBook } from '../../redux/book/book.actions';
-import CoverImage from '../cover-image/cover-image.component';
+import CoverImage from '../../components/cover-image/cover-image.component';
 
 const BookItem = ({
   bookItem: {
