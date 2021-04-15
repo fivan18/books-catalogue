@@ -17,10 +17,19 @@ const Search = ({
 
     axios.get(`https://openlibrary.org/search.json?title=${keyWord}&mode=ebooks&has_fulltext=true`)
       .then((res) => {
-        const booksItems = res.data.docs;
-        addBooks(booksItems);
-        choseYear('All');
         setInProgress(false);
+
+        const booksItems = res.data.docs;
+        if (booksItems.length === 0) {
+          history.push(`${match.url}not-found`);
+        } else {
+          addBooks(booksItems);
+          choseYear('All');
+        }
+      })
+      .catch(() => {
+        setInProgress(false);
+        history.push(`${match.url}not-found`);
       });
 
     setInput('');

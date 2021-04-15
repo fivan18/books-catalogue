@@ -1,0 +1,41 @@
+.not-found {
+  background-color: #fff;
+  position: absolute;
+  top: 10rem;
+  bottom: 0;
+  right: 3rem;
+  left: 3rem;
+  padding: 10rem 20rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  &__header {
+    font-family: inherit;
+    font-size: 12rem;
+    font-weight: 100;
+  }
+
+  &__oops {
+    font-family: inherit;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+  }
+
+  &__link-to-homepage {
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 100;
+  }
+}
