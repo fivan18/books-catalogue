@@ -25,9 +25,14 @@ const CoverImage = ({
   </div>
 );
 
+CoverImage.defaultProps = {
+  lendingEditionS: null,
+  coverI: null,
+};
+
 CoverImage.propTypes = {
-  lendingEditionS: PropTypes.string.isRequired,
-  coverI: PropTypes.number.isRequired,
+  lendingEditionS: PropTypes.string,
+  coverI: PropTypes.number,
   avatarBook: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
 };

@@ -10,12 +10,10 @@ import CoverImage from '../../components/cover-image/cover-image.component';
 import { loremText } from './details.data';
 
 const Details = ({ match: { params: { workId } }, coverI, lendingEditionS }) => {
-  const [details, setDetails] = useState({
-    title: '',
-    description: '',
-  });
+  const [details, setDetails] = useState({});
 
   useEffect(() => {
+    let mounted = true;
     axios.get(`http://openlibrary.org/works/${workId}.json`)
       .then((res) => {
         const { title, description } = res.data;
@@ -23,14 +21,18 @@ const Details = ({ match: { params: { workId } }, coverI, lendingEditionS }) => 
           title: title || 'No title',
           description: description || loremText,
         };
-
-        setDetails(data);
+        if (mounted) {
+          setDetails(data);
+        }
       })
       .catch(() => setDetails({
         title: 'No title found',
         description: 'No description found',
       }));
-  });
+
+    // eslint-disable-next-line no-return-assign
+    return () => mounted = false;
+  }, []);
 
   const { title, description } = details;
 

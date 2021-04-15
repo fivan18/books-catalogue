@@ -206,4 +206,42 @@ export const mockBooks = [
   },
 ];
 
-export const ivancito = 'ivancito';
+export const mockBook = {
+  created: {
+    type: '/type/datetime',
+    value: '2016-10-14T14:29:20.229955',
+  },
+  subjects: [
+    'Novela juvenil',
+    'Hadas',
+    'Principes',
+    'Princes',
+    'Juvenile fiction',
+    'Fairies',
+    'Fiction',
+  ],
+  latest_revision: 3,
+  key: '/works/OL17499975W',
+  title: 'El Principito Y El Bosque Encantado',
+  authors: [
+    {
+      type: {
+        key: '/type/author_role',
+      },
+      author: {
+        key: '/authors/OL2654340A',
+      },
+    },
+  ],
+  type: {
+    key: '/type/work',
+  },
+  last_modified: {
+    type: '/type/datetime',
+    value: '2018-10-28T07:27:10.992463',
+  },
+  covers: [
+    7701721,
+  ],
+  revision: 3,
+};
