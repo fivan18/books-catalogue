@@ -25,10 +25,14 @@ const Details = ({ match: { params: { workId } }, coverI, lendingEditionS }) => 
           setDetails(data);
         }
       })
-      .catch(() => setDetails({
-        title: 'No title found',
-        description: 'No description found',
-      }));
+      .catch(() => {
+        if (mounted) {
+          setDetails({
+            title: 'No title found',
+            description: 'No description found',
+          });
+        }
+      });
 
     // eslint-disable-next-line no-return-assign
     return () => mounted = false;
