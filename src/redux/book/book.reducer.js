@@ -1,8 +1,9 @@
 import BookActionTypes from './book.types';
 import { choseBookByKey } from './book.utils';
+import { defaultBooks } from './book.data';
 
 const INITIAL_STATE = {
-  bookItems: [],
+  bookItems: defaultBooks,
   bookItem: {},
   year: 'All',
   inProgress: false,
