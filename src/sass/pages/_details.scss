@@ -1,0 +1,37 @@
+.details {
+  background-color: #fff;
+  position: absolute;
+  top: 10rem;
+  bottom: 0;
+  right: 3rem;
+  left: 3rem;
+  padding: 10rem 20rem;
+  padding-bottom: 0;
+  display: flex;
+
+  &__image {
+    padding: 5rem;
+    border: 1px solid rgb(196, 193, 193);
+    border-radius: 10px;
+  }
+
+  &__content {
+    padding-left: 3rem;
+  }
+
+  &__title {
+    font-family: inherit;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 200;
+    text-align: justify;
+    letter-spacing: 1px;
+    line-height: 2rem;
+  }
+}
