@@ -9,11 +9,8 @@ const NotFound = () => (
     <p className="not-found__oops">
       Oooops!!!
     </p>
-    <p className="not-found__text">
-      The Book was not found.
-    </p>
     <Link className="not-found__link-to-homepage" to="/">
-      Go To Homepage
+      Go To Main Page
     </Link>
   </div>
 );

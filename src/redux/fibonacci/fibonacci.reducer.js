@@ -1,7 +1,7 @@
 import FibonacciActionTypes from './fibonacci.types';
 
 const INITIAL_STATE = {
-  fibonacciMessage: 'Request the fibonacci position.',
+  fibonacciMessage: 'Request the fibonacci position',
   fibonacciValue: 0,
   inProgress: false,
 };
