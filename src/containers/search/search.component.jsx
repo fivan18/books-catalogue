@@ -3,40 +3,37 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+import {
+  addFibonacciValue,
+  addFibonacciMessage,
+  setInProgress,
+} from '../../redux/fibonacci/fibonacci.actions';
 
-import { addBooks, choseYear, setInProgress } from '../../redux/book/book.actions';
 import searchIcon from '../../assets/search.png';
 
 const Search = ({
-  addBooks, choseYear, setInProgress, match, history,
+  addFibonacciValue, addFibonacciMessage, setInProgress, match, history,
 }) => {
   const [input, setInput] = useState('');
 
-  const handleSubmit = (event, keyWord) => {
+  const handleSubmit = (event, position) => {
     event.preventDefault();
 
-    axios.get(`https://openlibrary.org/search.json?title=${keyWord}&mode=ebooks&has_fulltext=true`)
+    axios.get(`http://localhost:8000/fibonacci/${position}`)
       .then((res) => {
         setInProgress(false);
 
-        const booksItems = res.data.docs;
-        if (booksItems.length === 0) {
-          history.push(`${match.url}not-found`);
-        } else {
-          addBooks(booksItems);
-          choseYear('All');
-        }
+        const { fibonacci_value: fibonacciValue } = res.data;
+        addFibonacciValue(fibonacciValue);
+
+        addFibonacciMessage('The fibonacci value is:');
       })
       .catch(() => {
         setInProgress(false);
         history.push(`${match.url}not-found`);
       });
 
-    setInput('');
-
     setInProgress(true);
-
-    history.push(`${match.url}`);
   };
 
   return (
@@ -64,8 +61,8 @@ const Search = ({
 };
 
 Search.propTypes = {
-  addBooks: PropTypes.func.isRequired,
-  choseYear: PropTypes.func.isRequired,
+  addFibonacciValue: PropTypes.func.isRequired,
+  addFibonacciMessage: PropTypes.func.isRequired,
   setInProgress: PropTypes.func.isRequired,
   match: PropTypes.shape({
     url: PropTypes.string,
@@ -76,8 +73,8 @@ Search.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addBooks: (books) => dispatch(addBooks(books)),
-  choseYear: (year) => dispatch(choseYear(year)),
+  addFibonacciMessage: (books) => dispatch(addFibonacciMessage(books)),
+  addFibonacciValue: (year) => dispatch(addFibonacciValue(year)),
   setInProgress: (status) => dispatch(setInProgress(status)),
 });
 
