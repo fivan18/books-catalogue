@@ -1,0 +1,7 @@
+const FibonacciActionTypes = {
+  ADD_FIBONACCI_MESSAGE: 'ADD_FIBONACCI_MESSAGE',
+  ADD_FIBONACCI_VALUE: 'ADD_FIBONACCI_VALUE',
+  SET_IN_PROGRESS: 'SET_IN_PROGRESS',
+};
+
+export default FibonacciActionTypes;
