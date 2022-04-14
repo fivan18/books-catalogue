@@ -26,11 +26,17 @@ const Search = ({
         const { fibonacci_value: fibonacciValue } = res.data;
         addFibonacciValue(fibonacciValue);
 
-        addFibonacciMessage('The fibonacci value is:');
+        addFibonacciMessage('Fibonacci value');
       })
-      .catch(() => {
+      .catch((error) => {
         setInProgress(false);
-        history.push(`${match.url}not-found`);
+
+        if (error.response.status === 422) {
+          addFibonacciMessage(error.response.data.message);
+          addFibonacciValue(0);
+        } else {
+          history.push(`${match.url}not-found`);
+        }
       });
 
     setInProgress(true);
