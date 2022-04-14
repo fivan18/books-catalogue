@@ -18,13 +18,17 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-Make sure you have installed [Node JS](https://nodejs.org/en/). If not, follow this [guide](https://www.geeksforgeeks.org/installation-of-node-js-on-linux/) for Linux or this [one](https://treehouse.github.io/installation-guides/mac/node-mac.html) for Mac OS.
+- This app works with a fibonacci API. You need to have up and running [this API.](https://github.com/fivan18/rails-api-template) Rest assured you are in the fibonacci branch.
+
+- Make sure you have installed [Node JS](https://nodejs.org/en/). If not, follow this [guide](https://www.geeksforgeeks.org/installation-of-node-js-on-linux/) for Linux or this [one](https://treehouse.github.io/installation-guides/mac/node-mac.html) for Mac OS.
 
 ### Download the project
 
     $ git clone https://github.com/fivan18/books-catalogue.git
 
 ### Install the dependencies
+
+Go to the project's root directory and run:
 
     $ npm install
 
