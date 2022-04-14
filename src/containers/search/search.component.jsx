@@ -40,7 +40,7 @@ const Search = ({
     <form className="search">
       <input
         className="search__input"
-        placeholder="Search by title..."
+        placeholder="Enter the position..."
         type="text"
         onChange={(event) => setInput(event.target.value)}
         value={input}

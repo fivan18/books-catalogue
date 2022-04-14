@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
 
-import { selectInProgress } from '../../redux/book/book.selectors';
+import { selectInProgress } from '../../redux/fibonacci/fibonacci.selectors';
 
 const Progress = ({ inProgress }) => (
   <div>
