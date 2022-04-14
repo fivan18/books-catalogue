@@ -57,7 +57,6 @@ Feel free to check the [issues page](https://github.com/fivan18/books-catalogue/
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-- [Open Library](https://openlibrary.org/) for the [API](https://openlibrary.org/developers/api) used to fetch the books data.
 - Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 - Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 - Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
